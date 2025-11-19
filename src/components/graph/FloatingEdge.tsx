@@ -1,11 +1,12 @@
-import { useCallback } from 'react';
-import { useStore, getStraightPath, EdgeLabelRenderer } from 'reactflow';
-import type { EdgeProps } from 'reactflow';
-import { getEdgeParams } from '@/components/graph/utils';
+import { useReactFlow, getStraightPath, EdgeLabelRenderer } from '@xyflow/react';
+import type { EdgeProps } from '@xyflow/react';
+import { getEdgeParams } from './utils';
+import type { GraphEdge } from '../../engine/GraphModel';
 
-export function FloatingEdge({ id, source, target, markerEnd, style, data }: EdgeProps) {
-  const sourceNode = useStore(useCallback((store) => store.nodeInternals.get(source), [source]));
-  const targetNode = useStore(useCallback((store) => store.nodeInternals.get(target), [target]));
+export function FloatingEdge({ id, source, target, markerEnd, style, data }: EdgeProps<GraphEdge>) {
+  const reactFlowInstance = useReactFlow();
+  const sourceNode = reactFlowInstance.getNode(source);
+  const targetNode = reactFlowInstance.getNode(target);
 
   if (!sourceNode || !targetNode) {
     return null;

@@ -1,8 +1,9 @@
-import { Handle, Position } from 'reactflow';
-import type { NodeProps } from 'reactflow';
+import { Handle, Position } from '@xyflow/react';
+import type { NodeProps } from '@xyflow/react';
 import { cn } from "@/lib/utils";
+import type { GraphNode } from '../../engine/GraphModel';
 
-export function CustomNode({ data, selected }: NodeProps) {
+export function CustomNode({ data, selected }: NodeProps<GraphNode>) {
   return (
     <div className={cn(
       "rounded-full border-2 bg-background flex items-center justify-center shadow-sm transition-all",

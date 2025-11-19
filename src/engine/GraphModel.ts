@@ -1,5 +1,5 @@
-import { MarkerType } from 'reactflow';
-import type { Node as ReactFlowNode, Edge as ReactFlowEdge } from 'reactflow';
+import { MarkerType } from '@xyflow/react';
+import type { Node as ReactFlowNode, Edge as ReactFlowEdge } from '@xyflow/react';
 
 export type GraphNode = ReactFlowNode & {
   data: {

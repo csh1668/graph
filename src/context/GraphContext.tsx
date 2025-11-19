@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { parseInput } from '../engine/Parser';
-import { MarkerType } from 'reactflow';
+import { MarkerType } from '@xyflow/react';
 import type { Graph, GraphNode, GraphEdge } from '../engine/GraphModel';
 import type { InputFormat } from '../engine/Parser';
-import { applyNodeChanges, applyEdgeChanges } from 'reactflow';
-import type { NodeChange, EdgeChange } from 'reactflow';
+import { applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
+import type { NodeChange, EdgeChange } from '@xyflow/react';
 import type { AlgorithmStep } from '../algorithms/types';
 
 interface GraphContextType {
@@ -142,7 +142,7 @@ export function GraphProvider({ children }: { children: React.ReactNode }) {
 
     // Only reset if structural changes occur (remove, reset)
     // Position, dimensions, select should not reset the algorithm
-    const hasStructuralChanges = changes.some(c => c.type === 'remove' || c.type === 'reset');
+    const hasStructuralChanges = changes.some(c => c.type === 'remove');
     if (hasStructuralChanges) {
       resetAlgorithm();
     }
@@ -154,7 +154,7 @@ export function GraphProvider({ children }: { children: React.ReactNode }) {
       edges: applyEdgeChanges(changes, prev.edges) as GraphEdge[],
     }));
 
-    const hasStructuralChanges = changes.some(c => c.type === 'remove' || c.type === 'reset');
+    const hasStructuralChanges = changes.some(c => c.type === 'remove');
     if (hasStructuralChanges) {
       resetAlgorithm();
     }

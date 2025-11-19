@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { forceSimulation, forceLink, forceManyBody, forceCenter, forceX, forceY } from 'd3-force';
 import type { Simulation } from 'd3-force';
 import type { GraphNode, GraphEdge } from './GraphModel';
-import type { NodeChange } from 'reactflow';
+import type { NodeChange } from '@xyflow/react';
 
 export const useForceLayout = (
   nodes: GraphNode[],

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ReactFlow, {
+import {
+  ReactFlow,
   Background,
   Controls,
   MiniMap,
@@ -8,8 +9,8 @@ import ReactFlow, {
   ReactFlowProvider,
   BackgroundVariant,
   type Node
-} from 'reactflow';
-import 'reactflow/dist/style.css';
+} from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
 import { useGraph } from '../../context/GraphContext';
 import { useForceLayout } from '../../engine/useForceLayout';
 import { Button } from "@/components/ui/button";
