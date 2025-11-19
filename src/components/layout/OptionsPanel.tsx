@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useGraph } from '../../context/GraphContext';
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -9,7 +9,7 @@ import { Play, Pause, SkipBack, SkipForward, RotateCcw } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { toPng } from 'html-to-image';
 
-export const OptionsPanel: React.FC = () => {
+export default function OptionsPanel() {
   const {
     graph,
     runAlgorithm,

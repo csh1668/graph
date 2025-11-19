@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { parseInput } from '../engine/Parser';
 import { MarkerType } from 'reactflow';
 import type { Graph, GraphNode, GraphEdge } from '../engine/GraphModel';
@@ -38,7 +38,7 @@ const defaultGraph: Graph = {
 
 const GraphContext = createContext<GraphContextType | undefined>(undefined);
 
-export const GraphProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export function GraphProvider({ children }: { children: React.ReactNode }) {
   const [graph, setGraph] = useState<Graph>(defaultGraph);
   const [algorithmSteps, setAlgorithmSteps] = useState<AlgorithmStep[]>([]);
   const [currentStepIndex, setCurrentStepIndex] = useState(-1);

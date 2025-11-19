@@ -1,9 +1,8 @@
-import { memo } from 'react';
 import { Handle, Position } from 'reactflow';
 import type { NodeProps } from 'reactflow';
 import { cn } from "@/lib/utils";
 
-export const CustomNode = memo(({ data, selected }: NodeProps) => {
+export function CustomNode({ data, selected }: NodeProps) {
   return (
     <div className={cn(
       "rounded-full border-2 bg-background flex items-center justify-center shadow-sm transition-all",
@@ -30,4 +29,4 @@ export const CustomNode = memo(({ data, selected }: NodeProps) => {
       )}
     </div>
   );
-});
+}

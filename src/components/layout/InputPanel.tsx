@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useGraph } from '../../context/GraphContext';
 
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-export const InputPanel: React.FC = () => {
+export default function InputPanel() {
   const { updateInput } = useGraph();
   const [input, setInput] = useState('1 2 3\n2 3 4\n3 1 1');
   const [directed, setDirected] = useState(true);

@@ -1,5 +1,5 @@
-import { MainLayout } from './components/layout/MainLayout';
-import { GraphProvider } from './context/GraphContext';
+import MainLayout from '@/components/layout/MainLayout';
+import { GraphProvider } from '@/context/GraphContext';
 
 function App() {
   return (

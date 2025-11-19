@@ -26,7 +26,7 @@ const edgeTypes = {
   floating: FloatingEdge,
 };
 
-const GraphCanvasContent: React.FC = () => {
+function GraphCanvasContent() {
   const { graph, onNodesChange, onEdgesChange, addNode, addEdge, toggleNodeFixed } = useGraph();
   const { onNodeDragStart, onNodeDrag, onNodeDragStop } = useForceLayout(graph.nodes, graph.edges, onNodesChange);
   const [mode, setMode] = useState<'default' | 'add-node' | 'add-edge'>('default');
@@ -159,7 +159,7 @@ const GraphCanvasContent: React.FC = () => {
   );
 };
 
-export const GraphCanvas: React.FC = () => {
+export function GraphCanvas() {
   return (
     <ReactFlowProvider>
       <GraphCanvasContent />

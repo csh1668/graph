@@ -89,14 +89,14 @@ export const dijkstra: AlgorithmGenerator = (graph: Graph, startNode: string, en
   return steps;
 };
 
-const reconstructPath = (parent: Map<string, string>, start: string, end: string): string[] => {
-  const path: string[] = [end];
-  let curr = end;
-  while (curr !== start) {
-    const p = parent.get(curr);
-    if (!p) break;
-    path.unshift(p);
-    curr = p;
-  }
-  return path;
-};
+// const reconstructPath = (parent: Map<string, string>, start: string, end: string): string[] => {
+//   const path: string[] = [end];
+//   let curr = end;
+//   while (curr !== start) {
+//     const p = parent.get(curr);
+//     if (!p) break;
+//     path.unshift(p);
+//     curr = p;
+//   }
+//   return path;
+// };

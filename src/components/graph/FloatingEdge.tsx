@@ -3,7 +3,7 @@ import { useStore, getStraightPath, EdgeLabelRenderer } from 'reactflow';
 import type { EdgeProps } from 'reactflow';
 import { getEdgeParams } from '@/components/graph/utils';
 
-export const FloatingEdge = ({ id, source, target, markerEnd, style, data }: EdgeProps) => {
+export function FloatingEdge({ id, source, target, markerEnd, style, data }: EdgeProps) {
   const sourceNode = useStore(useCallback((store) => store.nodeInternals.get(source), [source]));
   const targetNode = useStore(useCallback((store) => store.nodeInternals.get(target), [target]));
 
